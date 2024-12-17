@@ -1,0 +1,28 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace "net.micode.notes"
+    compileSdkVersion 33
+    buildToolsVersion "35.0.0"
+
+    defaultConfig {
+        applicationId "net.micode.notes"
+        minSdkVersion 14
+        targetSdkVersion 33
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'E:\\Android\\mi\\Notes-master2\\httpcomponents-client-4.5.14-bin\\lib', include: ['*.aar', '*.jar'],
+            exclude: ['commons-codec-1.11.jar','httpclient-4.5.14.jar','httpclient-cache-4.5.14.jar','fluent-hc-4.5.14.jar','httpmime-4.5.14.jar'])
+}
